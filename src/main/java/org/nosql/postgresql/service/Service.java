@@ -1,6 +1,6 @@
 package org.nosql.postgresql.service;
 
-import org.nosql.postgresql.Utils.OutputTable;
+import org.nosql.postgresql.utils.OutputTable;
 import org.nosql.postgresql.repository.JDBC;
 import org.nosql.postgresql.dto.SportPojo;
 import org.nosql.postgresql.entity.Sport;

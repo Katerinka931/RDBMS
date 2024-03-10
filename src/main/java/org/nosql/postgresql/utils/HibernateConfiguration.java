@@ -1,4 +1,4 @@
-package org.nosql.postgresql.Utils;
+package org.nosql.postgresql.utils;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;

@@ -1,4 +1,4 @@
-package org.nosql.postgresql.Utils;
+package org.nosql.postgresql.utils;
 
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 

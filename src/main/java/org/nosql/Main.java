@@ -1,8 +1,8 @@
 package org.nosql;
 
 import org.nosql.postgresql.service.Service;
-import org.nosql.postgresql.Utils.HibernateConfiguration;
-import org.nosql.postgresql.Utils.DataSourceConnection;
+import org.nosql.postgresql.utils.HibernateConfiguration;
+import org.nosql.postgresql.utils.DataSourceConnection;
 import org.nosql.postgresql.dto.SportPojo;
 
 import java.util.Scanner;
