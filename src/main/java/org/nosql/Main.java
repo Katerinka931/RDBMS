@@ -33,9 +33,9 @@ public class Main {
                     System.out.println("Введите название спорта, который хотите удалить: ");
                     String name = input.next();
 
-                    if (!serviceJDBC.deleteSport(name))
-                        System.out.println("Вид спорта не существует");
-                    else System.out.println("Удаление успешно");
+                    if (serviceJDBC.deleteSport(name))
+                        System.out.println("Удаление успешно");
+                    else System.out.println("Вид спорта не существует");
                 }
                 case 3 -> {
                     System.out.println("Введите название спорта, который хотите отредактировать: ");

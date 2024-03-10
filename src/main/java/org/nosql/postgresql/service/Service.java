@@ -22,8 +22,11 @@ public class Service {
     }
 
     public boolean deleteSport(String name) {
-        jdbc.deleteSport(name);
-        return jdbc.isSportExists(name);
+        if (jdbc.isSportExists(name)) {
+            jdbc.deleteSport(name);
+            return true;
+        }
+        return false;
     }
 
     public int editSport(String name, String newName) {
