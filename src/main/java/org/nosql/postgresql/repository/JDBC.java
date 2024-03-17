@@ -52,7 +52,6 @@ public class JDBC {
     }
 
 
-
     public List<Map<String, Object>> selectHaving() {
         // старший человек в команде
         return jdbcTemplate.queryForList("SELECT team_id, max(birthdate) AS mx FROM sportsman\n" +
@@ -89,6 +88,14 @@ public class JDBC {
                 "FROM team");
     }
 
+    public List<Map<String, Object>> recursiveFunction() {
+        return jdbcTemplate.queryForList("WITH RECURSIVE tmp AS (\n" +
+                "SELECT id, firstname FROM sportsman WHERE sport_id=3\n" +
+                " UNION ALL\n" +
+                "SELECT s.id, s.firstname FROM sportsman s JOIN tmp ON tmp.id = s.id\n" +
+                ") \n" +
+                "SELECT * FROM tmp OFFSET 5 LIMIT 2;");
+    }
 
     public boolean isSportExists(String name) {
         return namedParameterJdbcTemplate.queryForObject("SELECT count(*) FROM sport WHERE name = :name",

@@ -58,6 +58,7 @@ public class Main {
                             case 1 -> serviceJDBC.selectHaving();
                             case 2 -> serviceJDBC.selectJoins();
                             case 3 -> serviceJDBC.selectFunction();
+                            case 4 -> serviceJDBC.recursiveFunction();
                         }
                     } while (additionalChoice != 0);
                 }
@@ -85,6 +86,7 @@ public class Main {
         System.out.println("1 - Используя having/group by");
         System.out.println("2 - Все виды соединений (join)");
         System.out.println("3 - Оконная функция");
+        System.out.println("4 - Рекурсивная функция");
         System.out.println("0 - Вернуться в главное меню");
     }
 }

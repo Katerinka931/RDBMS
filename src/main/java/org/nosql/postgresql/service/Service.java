@@ -56,4 +56,9 @@ public class Service {
         List<Map<String, Object>> result = jdbc.selectFunction();
         OutputTable.printWindowFunctionTable(result);
     }
+
+    public void recursiveFunction() {
+        List<Map<String, Object>> result = jdbc.recursiveFunction();
+        OutputTable.printJoinTable("RECUR", "id", "firstname", result);
+    }
 }
