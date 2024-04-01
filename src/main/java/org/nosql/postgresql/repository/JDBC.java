@@ -90,11 +90,11 @@ public class JDBC {
 
     public List<Map<String, Object>> recursiveFunction() {
         return jdbcTemplate.queryForList("WITH RECURSIVE tmp AS (\n" +
-                "SELECT id, firstname FROM sportsman WHERE sport_id=3\n" +
-                " UNION ALL\n" +
-                "SELECT s.id, s.firstname FROM sportsman s JOIN tmp ON tmp.id = s.id\n" +
+                "SELECT id, firstname, parentid FROM sportsman WHERE parentid=0\n" +
+                "UNION ALL\n" +
+                "SELECT s.id, s.firstname, s.parentid FROM sportsman s JOIN tmp ON tmp.id = s.parentid\n" +
                 ") \n" +
-                "SELECT * FROM tmp OFFSET 5 LIMIT 2;");
+                "SELECT * FROM tmp;"); //OFFSET 5 LIMIT 10
     }
 
     public boolean isSportExists(String name) {

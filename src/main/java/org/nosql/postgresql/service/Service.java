@@ -59,6 +59,6 @@ public class Service {
 
     public void recursiveFunction() {
         List<Map<String, Object>> result = jdbc.recursiveFunction();
-        OutputTable.printJoinTable("RECUR", "id", "firstname", result);
+        OutputTable.printRecursiveTable("RECUR", "id", "firstname", "parentid",  result);
     }
 }

@@ -23,6 +23,10 @@ public class Sportsman {
     @Temporal(TemporalType.DATE)
     private Date birthdate;
 
+    @OneToMany
+//    @Column(nullable = true)
+    private List<Sportsman> parentId;
+
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "sport_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private Sport sport;

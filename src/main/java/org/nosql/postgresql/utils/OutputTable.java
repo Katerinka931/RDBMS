@@ -34,6 +34,27 @@ public class OutputTable {
         System.out.println("+----------------------------------------+\n");
     }
 
+
+    public static void printRecursiveTable(String title, String firstCol, String secondCol, String thirdCol, List<Map<String, Object>> result) {
+        System.out.printf("+-----------------%s------------------+\n", title);
+        System.out.println("+----------------------------------------+");
+        String text;
+        System.out.printf("| %s\t\t| %s\t\t| %s\n", firstCol, secondCol, thirdCol);
+        for (Map<String, Object> row : result) {
+            System.out.println("+----------------------------------------+");
+            try {
+                String a = row.get(firstCol).toString();
+                text = a.length() <= 5 ? "   " : "";
+            } catch (NullPointerException e) {
+                text = "    ";
+            }
+            System.out.printf(String.format("| %s\t\t| %s\t\t| %s\n", row.get(firstCol) + text, row.get(secondCol), row.get(thirdCol)));
+        }
+        System.out.println("+----------------------------------------+\n");
+    }
+
+
+
     public static void printWindowFunctionTable(List<Map<String, Object>> result) {
         System.out.printf("+-----------%s-----------+\n", "Оконная функция");
         System.out.println("+-------------------------------------+");

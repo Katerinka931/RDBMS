@@ -19,8 +19,9 @@ public class SportsmanPojo {
     private Date birthdate;
     private List<ContactPojo> contacts;
     private List<AchievementPojo> achievements;
-    private long sport_id;
+    private long sportId;
     private long team_id;
+    private long parentId;
 
     public static SportsmanPojo fromEntity(Sportsman sportsman) {
         SportsmanPojo pojo = new SportsmanPojo();
@@ -30,14 +31,14 @@ public class SportsmanPojo {
 
     public static SportsmanPojo fromEntity(Sportsman sportsman, long sport_id) {
         SportsmanPojo pojo = new SportsmanPojo();
-        pojo.sport_id = sport_id;
+        pojo.sportId = sport_id;
         setPojoData(pojo, sportsman);
         return pojo;
     }
 
     public static SportsmanPojo fromEntity(Sportsman sportsman, long sport_id, long team_id) {
         SportsmanPojo pojo = new SportsmanPojo();
-        pojo.setSport_id(sport_id);
+        pojo.setSportId(sport_id);
         pojo.setTeam_id(team_id);
         setPojoData(pojo, sportsman);
         return pojo;
